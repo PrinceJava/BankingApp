@@ -6,6 +6,7 @@ public class AccountHolder{
     private double balance;
 
 
+
     public AccountHolder(String acctNumber, String acctHolder, String date, double acctBalance){
         this.accountNumber = acctNumber;
         this.accountHolder = acctHolder;
