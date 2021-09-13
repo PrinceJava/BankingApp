@@ -5,9 +5,10 @@ import java.util.Scanner;
 
 public class MainDriver {
 
+    public static void main(String[] args) throws IOException{
+        BankDataInfo.readFile("C:\\Users\\raurosales\\Desktop\\Project1\\java-project-1\\src\\BankData.txt");
 
 
+    }
 
-    public static void main(String[] args){
-        System.out.println();
-    }}
+}

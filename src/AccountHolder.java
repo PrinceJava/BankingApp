@@ -1,13 +1,14 @@
 public class AccountHolder{
 
-    private String accountNumber;
+    private int accountNumber;
+    private String firstName;
+    private String lastName;
     private String accountHolder;
     private String openDate;
     private double balance;
 
 
-
-    public AccountHolder(String acctNumber, String acctHolder, String date, double acctBalance){
+    public AccountHolder(int acctNumber, String acctHolder, String date, double acctBalance){
         this.accountNumber = acctNumber;
         this.accountHolder = acctHolder;
         this.openDate = date;
@@ -24,7 +25,7 @@ public class AccountHolder{
         this.balance = this.balance +amount;
     }
 
-    public String getAccountNumber() {
+    public int getAccountNumber() {
         return accountNumber;
     }
 
@@ -55,4 +56,36 @@ public class AccountHolder{
     public void setBalance(double balance) {
         this.balance = balance;
     }
+    @Override
+    public String toString() {
+        return "AccountHolder{" +
+                "actNumber=" + accountNumber +
+                ", fName='" + firstName + '\'' +
+                ", lName='" + lastName + '\'' +
+                ", actPassword='" + actPassword + '\'' +
+                ", checkingAccount= " + checkingAccount.getBalance() +
+                ", savingsAccount= " + savingsAccount.getBalance() +
+                '}';
+
+
 }
+
+    public void setAccountNumber(int accountNumber) {
+        this.accountNumber = accountNumber;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }

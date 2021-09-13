@@ -7,23 +7,23 @@ import java.util.List;
 
 public class BankDataInfo {
 
-    public static List<AccountHolder> accountHolderList = new ArrayList<AccountHolder>();
-}
+//    public static List<AccountHolder> accountHolderList = new ArrayList<AccountHolder>();
+//}
 
-//    public void readFile(String fileName) throws IOException {
-//        File file = new File("BankData.txt");
-//        BufferedReader reader = null;
-//        try{
-//            reader = new BufferedReader(new BufferedReader(file));
-//            String currentLine = reader.readLine();
-//
-//            while (currentLine != null)
-//                AccountHolder accountHolder = new AccountHolder();
-//
-//            String data = currentLine.split(",");
-//            accountHolder.setAcctNumber(Integer.parseInt(data[0]));
-//
-//        }
+     static void readFile(String fileName) throws IOException {
+        File file = new File(fileName);
+        BufferedReader reader = null;
+        try {
+            reader = new BufferedReader(new BufferedReader(file));
+            String currentLine = reader.readLine();
+
+            while (currentLine != null)
+                AccountHolder accountHolder = new AccountHolder();
+
+            String[] data = currentLine.split(",");
+            accountHolder.setAcctNumber(Integer.parseInt(data[0]));
+            currentLine = reader.readLine();
+        }
 
 
 //    }
