@@ -9,8 +9,8 @@ import java.util.Scanner;
 
 
 
-public class MainDriver{
-    public static void userLogin(String accountNumber, String accountPassword){
+//public class MainDriver{
+//    public static void userLogin(String accountNumber, String accountPassword) throws FileNotFoundException {
 //        AccountHolder accountHolder = BankData.accountHolderList.stream().filter(
 //                account -> account.getAccountNumber()==Integer.parseInt(accountNumber)).findFirs().orElse(null);
 //        if (accountHolder.getAccountHolder() == Integer.parseInt(accountNumber) && accountHolder.getpassword().equals(acccount password)){
@@ -20,7 +20,10 @@ public class MainDriver{
 //        }
 //    }
 
-    public static void main(String[] args) throws IOException {
+
+
+public class MainDriver {
+    public static void main(String[] args) throws FileNotFoundException {
 
 //        Scanner scanner = new Scanner(System.in);
 //        System.out.println("Enter a number");
@@ -31,7 +34,8 @@ public class MainDriver{
 //        System.out.println("Value = " + c);
 //
 
-//        File file = new File(("BankData.txt"));
-//        BufferedReader br = new BufferedReader((new FileReader(file));
+        File file = new File(("BankData.txt"));
+        BufferedReader br = new BufferedReader((new FileReader(file)));
 
-    }}}
+    }
+}
