@@ -4,5 +4,4 @@ public class BankAccount {
     String customerName;
     String customerID;
 
-
 }
