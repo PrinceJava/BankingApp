@@ -1,5 +1,6 @@
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -7,44 +8,30 @@ import java.util.List;
 
 public class BankDataInfo {
 
-//    public static List<AccountHolder> accountHolderList = new ArrayList<AccountHolder>();
-//}
+    public static List<AccountHolder> accountHolderList = new ArrayList<>();
 
-     static void readFile(String fileName) throws IOException {
+    static void readFile(String fileName) throws IOException {
         File file = new File(fileName);
         BufferedReader reader = null;
         try {
-            reader = new BufferedReader(new BufferedReader(file));
+            reader = new BufferedReader(new FileReader(file));
             String currentLine = reader.readLine();
-
-            while (currentLine != null)
+            while (currentLine != null) {
                 AccountHolder accountHolder = new AccountHolder();
+                String[] data = currentLine.split(",");
+                accountHolder.setAccountNumber(Integer.parseInt(data[0]));
+                accountHolder.setFirstName(data[1]);
+                accountHolder.setLastName(data[2]);
+                accountHolder.setAcctPassword(data[3]);
+                accountHolder.setCheckingAccountBal(Double.parseDouble(data[4]));
+                accountHolder.setSavingsAccountBal(Double.parseDouble(data[5]));
+                accountHolderList.add(accountHolder);
+                currentLine = reader.readLine();
+            }
 
-            String[] data = currentLine.split(",");
-            accountHolder.setAcctNumber(Integer.parseInt(data[0]));
-            currentLine = reader.readLine();
+        } finally {
+            assert reader != null;
+            reader.close();
         }
-
-
-//    }
-
-//    public static <Accounts, fileReader, Account> ArrayList<Accounts> readFile(String fileName) {
-//        ArrayList<Accounts> accounts = new ArrayList<Accounts>();
-//        try {
-//            fileReader fileRead = new fileReader(fileName);
-//            BufferedReader br = new BufferedReader(fileRead);
-//            String line;
-//            while ((line = br.readLine()) != null) {
-//                String[] currentAccount = line.split(",");
-//                String acctNumber = currentAccount[0];
-//                String acctHolder = currentAccount[1];
-//                String openDat = currentAccount[2];
-//                double balance = Double.parseDouble(currentAccount[3]);
-//                Account acct = (Account) new AccountHolder(acctNumber, acctHolder, openDat, balance);
-//                accounts.add(AccountHolder);
-//            }
-//        } catch (Exception e) {
-//            System.out.println(e);
-//        }
-//        return accounts;
-//    }
+    }
+}
