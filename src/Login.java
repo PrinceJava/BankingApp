@@ -12,12 +12,13 @@ public class Login {
 //        String inpUser = login.nextLine();
 //        String inpPass = login.nextLine();
 
-
-        if (inpUser.equals(user) && inpPass.equals(pass)) {
-            System.out.print(" Welcome to Acme Bank ");
-        } else {
-            System.out.print(" Incorrect Username or Password ");
-        }
-    }
+//
+//        public void run() throws FileNotFoundException{
+//        if (inpaccountNumber.equals(accountNumber) && inpPass.equals(pass)) {
+//            System.out.print(" Welcome to Acme Bank ");
+//        } else {
+//            System.out.print(" Incorrect Username or Password ");
+//        }
+//    }
 }
 
