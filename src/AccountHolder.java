@@ -7,7 +7,7 @@ class  AccountHolder {
     private Double checkingAccountBal;
     private Double SavingsAccountBal;
 
-    public int getAccountNumber() {
+        public int getAccountNumber() {
         return accountNumber;
     }
 

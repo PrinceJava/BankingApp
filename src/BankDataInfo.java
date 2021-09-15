@@ -23,9 +23,11 @@ public class BankDataInfo {
                 accountHolder.setFirstName(data[1]);
                 accountHolder.setLastName(data[2]);
                 accountHolder.setAcctPassword(data[3]);
+                CheckingAccount checkingAccount = new CheckingAccount(Float.parseFloat(data[4]));
+                SavingsAccount savingsAccount = new SavingsAccount(Float.parseFloat(data[5]));
                 accountHolder.setCheckingAccountBal(Double.parseDouble(data[4]));
                 accountHolder.setSavingsAccountBal(Double.parseDouble(data[5]));
-                accountHolderList.add(accountHolder);
+                BankDataInfo.accountHolderList.add(accountHolder);
                 currentLine = reader.readLine();
             }
 
