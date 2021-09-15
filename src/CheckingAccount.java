@@ -11,7 +11,7 @@ public class CheckingAccount implements AccountActions {
     @Override
     public void depositMoney(float amount) {
         this.checkingBalance += amount;
-        float depositM = checkingBalance + amount;
+//        float depositM = checkingBalance + amount;
     }
 
     @Override

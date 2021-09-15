@@ -19,20 +19,31 @@ public class UserFunctionality {
 
             case 2:
                 System.out.println("Welcome to Savings account");
+                System.out.println("Type 1 for Deposit \n Type 2 for withdrawal \n Type 3 for balance ");
+                Scanner userSavingsActChoice = new Scanner(System.in);
+                int choice2 = userSavingsActChoice.nextInt();
+                System.out.println("Your Choice is " + choice2);
+                checkingAccountOptions(accountHolder);
+                break;
         }
     }
 
     public static void checkingAccountOptions(AccountHolder accountHolder) {
         System.out.println("Deposit Chosen");
         System.out.println("Choose Amount");
-        Scanner checkOptionsActions = new Scanner(System.in);
-        int choice2 = checkOptionsActions.nextInt();
-        switch (choice2) {
-            case 1:
-
-                accountHolder.getCheckingAccount().depositMoney(moneyIn);
-
-        }
+        Scanner depositAmountScanner = new Scanner(System.in);
+        float depositAmount = depositAmountScanner.nextFloat();
+        accountHolder.getCheckingAccount().depositMoney(depositAmount);
+        System.out.println(accountHolder.getCheckingAccount().getAccountBalance());
+//        Scanner checkOptionsActions = new Scanner(System.in);
+//        int choice3 = checkOptionsActions.nextInt();
+//        switch (choice3) {
+//            case 1:
+//                accountHolder.getCheckingAccount().depositMoney(200);
+//                System.out.println(accountHolder.getCheckingAccount().getAccountBalance());
+//
+//
+//        }
 
         //ToDo depositing money for the checking account.
         //first i need to ask the user to select where the money is being deposited checking or savings
