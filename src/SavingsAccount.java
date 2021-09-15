@@ -1,9 +1,25 @@
 public class SavingsAccount extends AccountHolder {
 
-    int balance;
-    int previousTransaction;
+    private float savingsBalance;
+    private float actNumber;
 
-    public SavingsAccount(float parseFloat) {
+    public float getSavingsBalance() {
+        return savingsBalance;
+    }
+
+    public void setSavingsBalance(float savingsBalance) {
+        this.savingsBalance = savingsBalance;
+    }
+
+    public float getActNumber() {
+        return actNumber;
+    }
+
+    public void setActNumber(float actNumber) {
+        this.actNumber = actNumber;
+    }
+
+    public SavingsAccount() {
         super();
     }}
 

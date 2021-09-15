@@ -10,13 +10,12 @@ public class Functions {
         } else {
             System.out.println(" Incorrect Password ");
         }
-        Scanner input = new Scanner(System.in);
+
+
         System.out.println("Welcome " + accountHolder.getFirstName());
         System.out.println("Type 1 for Checking ");
         System.out.println("Type 2 for Savings ");
-        Integer choice = input.nextInt();
-        System.out.println("Your choice is " + choice);
-        
+        System.out.println("Your choice is ");
 
     }
 

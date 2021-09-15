@@ -5,6 +5,16 @@ import java.util.Scanner;
 
 public class MainDriver {
 
+    public static final Scanner input = new Scanner(System.in);
+
+
+// test block on adding new user
+
+//    public static void newAccount(){
+//        AccountHolder newAccount = new AccountHolder();
+//        System.out.print("Type first name: ");
+//        String fName = input.next();
+//        accountHolder.setName(fName);
 
 
     public static void main(String[] args) throws IOException {
@@ -12,12 +22,16 @@ public class MainDriver {
 //        for (int i = 0; i < BankDataInfo.accountHolderList.size(); i++) {
 //            System.out.println(BankDataInfo.accountHolderList.get(i));
 
-        Scanner in = new Scanner(System.in);
         System.out.println("Welcome to Acme Bank");
-        System.out.println("Please type account number:");
-        System.out.println("\n");
+        System.out.println("Login or create new account: ");
+        System.out.println(input.next());
+        System.out.println("Please type account number: ");
+        System.out.println(input.next());
         System.out.println("Please type password: ");
-        Functions.userLogin(10001, "juagw362");
+        System.out.println(input.next());
+
+
+//        Functions.userLogin(10001, "juagw362");
 
 
     }

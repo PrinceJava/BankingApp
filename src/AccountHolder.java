@@ -4,8 +4,8 @@ class  AccountHolder {
     private String firstName;
     private String lastName;
     private String acctPassword;
-    private Double checkingAccountBal;
-    private Double SavingsAccountBal;
+//    private Double checkingAccountBal;
+//    private Double SavingsAccountBal;
 
         public int getAccountNumber() {
         return accountNumber;
@@ -39,21 +39,22 @@ class  AccountHolder {
         this.acctPassword = acctPassword;
     }
 
-    public Double getCheckingAccountBal() {
-        return checkingAccountBal;
-    }
 
-    public void setCheckingAccountBal(Double checkingAccountBal) {
-        this.checkingAccountBal = checkingAccountBal;
-    }
+//    public Double getCheckingAccountBal() {
+//        return checkingAccountBal;
+//    }
 
-    public Double getSavingsAccountBal() {
-        return SavingsAccountBal;
-    }
-
-    public void setSavingsAccountBal(Double savingsAccountBal) {
-        SavingsAccountBal = savingsAccountBal;
-    }
+//    public void setCheckingAccountBal(Double checkingAccountBal) {
+//        this.checkingAccountBal = checkingAccountBal;
+//    }
+//
+//    public Double getSavingsAccountBal() {
+//        return SavingsAccountBal;
+//    }
+//
+//    public void setSavingsAccountBal(Double savingsAccountBal) {
+//        SavingsAccountBal = savingsAccountBal;
+//    }
 
     @Override
     public String toString() {
@@ -62,8 +63,8 @@ class  AccountHolder {
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", acctPassword='" + acctPassword + '\'' +
-                ", checkingAccountBal=" + checkingAccountBal +
-                ", SavingsAccountBal=" + SavingsAccountBal +
+//                ", checkingAccountBal=" + checkingAccountBal +
+//                ", SavingsAccountBal=" + SavingsAccountBal +
                 '}';
     }
 }
