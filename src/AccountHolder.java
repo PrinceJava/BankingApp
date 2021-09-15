@@ -1,13 +1,12 @@
 class  AccountHolder {
-
     private int accountNumber;
     private String firstName;
     private String lastName;
     private String acctPassword;
-//    private Double checkingAccountBal;
-//    private Double SavingsAccountBal;
+    private CheckingAccount checkingAccount;
+    private SavingsAccount savingsAccount;
 
-        public int getAccountNumber() {
+    public int getAccountNumber() {
         return accountNumber;
     }
 
@@ -39,33 +38,19 @@ class  AccountHolder {
         this.acctPassword = acctPassword;
     }
 
+    public CheckingAccount getCheckingAccount() {
+        return checkingAccount;
+    }
 
-//    public Double getCheckingAccountBal() {
-//        return checkingAccountBal;
-//    }
+    public void setCheckingAccount(CheckingAccount checkingAccount) {
+        this.checkingAccount = checkingAccount;
+    }
 
-//    public void setCheckingAccountBal(Double checkingAccountBal) {
-//        this.checkingAccountBal = checkingAccountBal;
-//    }
-//
-//    public Double getSavingsAccountBal() {
-//        return SavingsAccountBal;
-//    }
-//
-//    public void setSavingsAccountBal(Double savingsAccountBal) {
-//        SavingsAccountBal = savingsAccountBal;
-//    }
+    public SavingsAccount getSavingsAccount() {
+        return savingsAccount;
+    }
 
-    @Override
-    public String toString() {
-        return "AccountHolder{" +
-                "accountNumber=" + accountNumber +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", acctPassword='" + acctPassword + '\'' +
-//                ", checkingAccountBal=" + checkingAccountBal +
-//                ", SavingsAccountBal=" + SavingsAccountBal +
-                '}';
+    public void setSavingsAccount(SavingsAccount savingsAccount) {
+        this.savingsAccount = savingsAccount;
     }
 }
-
