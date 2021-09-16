@@ -1,10 +1,14 @@
 import java.util.Scanner;
 
 
-
 public class UserFunctionality {
     public static void userOptions(AccountHolder accountHolder) {
+//        Scanner userActOptions = new Scanner(System.in);
         System.out.println("Welcome " + accountHolder.getFirstName());
+//        System.out.println("1. To display Chercking account balance ");
+//        System.out.println();
+
+
         System.out.println("Type 1 for Checking ");
         System.out.println("Type 2 for Savings ");
         Scanner userActChoice = new Scanner(System.in);
@@ -12,90 +16,100 @@ public class UserFunctionality {
         switch (choice) {
             case 1:
                 System.out.println("Welcome to Checking Account");
-                System.out.println("Type 1 for Deposit \n Type 2 for withdrawal ");
+                System.out.println("Type 1 for Deposit \n Type 2 for withdrawal \n type 3 for Balance ");
                 Scanner userCheckingActChoice = new Scanner(System.in);
-                int choice1 = userCheckingActChoice.nextInt();
-//                System.out.println("Your Choice is " + choice1);
-                checkingAccountOptions(accountHolder);
+                int checkActChoice = userCheckingActChoice.nextInt();
+                if (checkActChoice == 1) {
+                    System.out.println("Depositing money");
+                    checkingAccountDepositOption(accountHolder);
+                } else if (checkActChoice == 2) {
+                    System.out.println("Withdrawal money");
+                    checkingAccountWithdrawalOption(accountHolder);
+                } else if (checkActChoice == 3) {
+                    System.out.println("Check Account Balance");
+                    checkingAccountBalanceOption(accountHolder);
+                } else {
+                    System.out.println("Incorrect menu option ");
+                }
                 break;
 
             case 2:
                 System.out.println("Welcome to Savings account");
-                System.out.println("Type 1 for Deposit \n Type 2 for withdrawal ");
+                System.out.println("Type 1 for Deposit \n Type 2 for withdrawal \n Type 3 for Balance ");
                 Scanner userSavingsActChoice = new Scanner(System.in);
-                int choice2 = userSavingsActChoice.nextInt();
-//                System.out.println("Your Choice is " + choice2);
-                savingsAccountOptions(accountHolder);
+                int savingsActChoice = userSavingsActChoice.nextInt();
+                if (savingsActChoice == 1) {
+                    System.out.println("Depositing Money");
+                    savingsAccountDepositOption(accountHolder);
+                } else if (savingsActChoice == 2) {
+                    System.out.println("Withdrawal Money ");
+                    savingsAccountWithdrawalOption(accountHolder);
+                } else if (savingsActChoice == 3) {
+                    System.out.println("Savings Account Balance");
+                    savingsAccountBalanceOption(accountHolder);
+                } else {
+                    System.out.println("Invalid menu option ");
+                }
                 break;
-
         }
-//        System.out.println(accountHolder.getCheckingAccount().getAccountBalance());
     }
 
-    public static void checkingAccountOptions(AccountHolder accountHolder) {
+    public static void checkingAccountDepositOption(AccountHolder accountHolder) {
         System.out.println("Deposit Chosen");
         System.out.println("Choose Amount");
         Scanner depositAmountScanner = new Scanner(System.in);
         float depositAmount = depositAmountScanner.nextFloat();
         System.out.println(depositAmount);
         accountHolder.getCheckingAccount().depositMoney(depositAmount);
-        System.out.println("your new balance is " +accountHolder.getCheckingAccount().getAccountBalance());
-
+        System.out.println("your new balance is " + accountHolder.getCheckingAccount().getAccountBalance());
     }
 
-    public void withdrawCheckingAct (AccountHolder accountHolder) {
-        Scanner wc = new Scanner(System.in);
+    public static void checkingAccountWithdrawalOption(AccountHolder accountHolder) {
+        Scanner checkingWithdrawal = new Scanner(System.in);
         System.out.println("Your current balance is " + accountHolder.getCheckingAccount().getAccountBalance());
         System.out.println("Enter amount to withdraw: ");
-        float amount = wc.nextFloat();
-        if(amount <= accountHolder.getCheckingAccount().getAccountBalance()){
+        float amount = checkingWithdrawal.nextFloat();
+        if (amount <= accountHolder.getCheckingAccount().getAccountBalance()) {
             accountHolder.getCheckingAccount().withdrawMoney(amount);
             System.out.println("Your new balance is " + accountHolder.getCheckingAccount().getAccountBalance());
             userOptions(accountHolder);
-        }else{
+        } else {
             System.out.println("Insufficient Funds");
             userOptions(accountHolder);
         }
     }
 
-    public static void savingsAccountOptions(AccountHolder accountHolder) {
+    public static void checkingAccountBalanceOption(AccountHolder accountHolder) {
+        System.out.println("Your current balance is " + accountHolder.getCheckingAccount().getAccountBalance());
+    }
+
+    public static void savingsAccountDepositOption(AccountHolder accountHolder) {
         System.out.println("Deposit Chosen");
         System.out.println("Choose Amount");
         Scanner depositSavingsAmountScanner = new Scanner(System.in);
         float depositAmount = depositSavingsAmountScanner.nextFloat();
         accountHolder.getSavingsAccount().depositMoney(depositAmount);
-        System.out.println("Your new balance is "+ accountHolder.getSavingsAccount().getAccountBalance());
+        System.out.println("Your new balance is " + accountHolder.getSavingsAccount().getAccountBalance());
+    }
 
-//        System.out.println("Withdrawal Chosen");
-//        System.out.println("Choose Amount");
-//        Scanner withdrawalSavingsAmountScanner = new Scanner(System.in);
-//        float withdrawalAmount = withdrawalSavingsAmountScanner.nextFloat();
-//        System.out.println(withdrawalAmount);
-//        accountHolder.getCheckingAccount().withdrawMoney(withdrawalAmount);
+    public static void savingsAccountWithdrawalOption(AccountHolder accountHolder) {
+        Scanner savingWithdrawal = new Scanner(System.in);
+        System.out.println("Your current balance is " + accountHolder.getSavingsAccount().getAccountBalance());
+        System.out.println("Enter amount to withdraw: ");
+        float amount = savingWithdrawal.nextFloat();
+        if (amount <= accountHolder.getSavingsAccount().getAccountBalance()) {
+            accountHolder.getSavingsAccount().withdrawMoney(amount);
+            System.out.println("Your new balance is " + accountHolder.getSavingsAccount().getAccountBalance());
+            userOptions(accountHolder);
+        } else {
+            System.out.println("Insufficient Funds");
+            userOptions(accountHolder);
+        }
+    }
 
-}
-
-
-
-
-
-//        System.out.println(accountHolder.getCheckingAccount().getAccountBalance());
-//        Scanner checkOptionsActions = new Scanner(System.in);
-//        int choice3 = checkOptionsActions.nextInt();
-//        switch (choice3) {
-//            case 1:
-//                accountHolder.getCheckingAccount().depositMoney(200);
-//                System.out.println(accountHolder.getCheckingAccount().getAccountBalance());
-//
-//
-//        }
-
-        //ToDo depositing money for the checking account.
-        //first i need to ask the user to select where the money is being deposited checking or savings
-        //user is selecting checking account
-        //i have to show 3 options.. 1. deposit money 2. withdraw money 3. current account balance
-
-
+    public static void savingsAccountBalanceOption(AccountHolder accountHolder) {
+        System.out.println("Your current balance is " + accountHolder.getSavingsAccount().getAccountBalance());
+    }
 
     public static void userLogin(int accountNumber, String password) {
         AccountHolder accountHolder = BankDataInfo.accountHolderList.stream()
