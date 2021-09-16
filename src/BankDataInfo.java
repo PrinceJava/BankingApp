@@ -26,8 +26,8 @@ public class BankDataInfo {
                 accountHolder.setAcctPassword(data[3]);
                 CheckingAccount checkingAccount = new CheckingAccount(Float.parseFloat(data[4]));
                 SavingsAccount savingsAccount= new SavingsAccount(Float.parseFloat(data[5]));
-//                accountHolder.setCheckingAccountBal(Double.parseDouble(data[4]));
-//                accountHolder.setSavingsAccountBal(Double.parseDouble(data[5]));
+                accountHolder.setCheckingAccount(checkingAccount);
+                accountHolder.setSavingsAccount(savingsAccount);
                 BankDataInfo.accountHolderList.add(accountHolder);
                 currentLine = reader.readLine();
             }
