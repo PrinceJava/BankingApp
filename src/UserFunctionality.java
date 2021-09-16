@@ -1,4 +1,6 @@
+import java.io.IOException;
 import java.util.Scanner;
+import java.util.concurrent.Callable;
 
 
 public class UserFunctionality {
@@ -124,7 +126,43 @@ public class UserFunctionality {
         }
     }
 
-}
+    public static void newAccountCreation() {
+        AccountHolder accountHolder = new AccountHolder();
+        Scanner newAct = new Scanner(System.in);
+        int accountNumber = BankDataInfo.accountHolderList.stream().map(AccountHolder::getAccountNumber).reduce((x, y) -> x > y ? x : y).orElse(0);
+        accountHolder.setAccountNumber(accountNumber);
+        System.out.println("Enter First Name: ");
+        Scanner userCreateFirstNameScanner = new Scanner (System.in);
+        String firstName = userCreateFirstNameScanner.next();
+        accountHolder.setFirstName(firstName);
+        System.out.println("Enter Last Name: ");
+        Scanner userCreateLastNameScanner = new Scanner (System.in);
+        String lastName = userCreateLastNameScanner.next();
+        accountHolder.setLastName(lastName);
+        System.out.println("Enter Password: ");
+        Scanner userCreatePasswordScanner = new Scanner(System.in);
+        String password = userCreatePasswordScanner.nextLine();
+        accountHolder.setAcctPassword(password);
+        System.out.println("Enter Initial Deposit Amount ");
+        float firstChecking = newAct.nextFloat();
+        CheckingAccount firstCheckingAccount = new CheckingAccount(firstChecking);
+        System.out.println("Enter Initial Deposit Amount ");
+        float firstSavings = newAct.nextFloat();
+        SavingsAccount firstSavingsAccount = new SavingsAccount(firstSavings);
+        accountHolder.setAccountNumber(accountNumber);
+        accountHolder.setFirstName(firstName);
+        accountHolder.setAcctPassword(lastName);
+        accountHolder.setCheckingAccount(firstCheckingAccount);
+        accountHolder.setSavingsAccount(firstSavingsAccount);
+
+        try {
+            BankDataInfo.writeFile();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+        };
+
 
 
 

@@ -1,7 +1,4 @@
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -35,6 +32,18 @@ public class BankDataInfo {
         } finally {
             assert reader != null;
             reader.close();
+        }
+
+    }
+    static void writeFile() throws IOException{
+        File file = new File("\"C:\\\\Users\\\\raurosales\\\\Desktop\\\\Project1\\\\java-project-1\\\\src\\\\BankData.txt\"");
+        FileWriter newAccount = new FileWriter(file, true);
+        BufferedWriter bufferedWriter = new BufferedWriter(newAccount);
+        for(int i = 0; i<accountHolderList.size(); i++){
+            newAccount.write(String.valueOf(accountHolderList.get(i).getAccountNumber()+"," +
+                    accountHolderList.get(i).getFirstName()+ "," + accountHolderList.get(i).getLastName()+
+                    ","+ accountHolderList.get(i).getAcctPassword()+ "," + accountHolderList.get(i).getCheckingAccount().getAccountBalance()
+                    +"," +accountHolderList.get(i).getSavingsAccount().getAccountBalance()));
         }
 
     }
