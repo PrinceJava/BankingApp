@@ -1,6 +1,7 @@
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 
 public class BankDataInfo {
@@ -35,16 +36,16 @@ public class BankDataInfo {
         }
 
     }
-    static void writeFile() throws IOException{
-        File file = new File("\"C:\\\\Users\\\\raurosales\\\\Desktop\\\\Project1\\\\java-project-1\\\\src\\\\BankData.txt\"");
-        FileWriter newAccount = new FileWriter(file, true);
-        BufferedWriter bufferedWriter = new BufferedWriter(newAccount);
-        for(int i = 0; i<accountHolderList.size(); i++){
-            newAccount.write(String.valueOf(accountHolderList.get(i).getAccountNumber()+"," +
-                    accountHolderList.get(i).getFirstName()+ "," + accountHolderList.get(i).getLastName()+
-                    ","+ accountHolderList.get(i).getAcctPassword()+ "," + accountHolderList.get(i).getCheckingAccount().getAccountBalance()
-                    +"," +accountHolderList.get(i).getSavingsAccount().getAccountBalance()));
-        }
+    static void addNewCustomerToFile(AccountHolder accountHolder) throws IOException{
+        File file = new File("C:\\Users\\raurosales\\Desktop\\Project1\\java-project-1\\src\\BankData.txt");
+        FileWriter newAddedAccountMemberWriter = new FileWriter(file, true);
+        BufferedWriter bufferedWriter = new BufferedWriter(newAddedAccountMemberWriter);
+        String stringContent = accountHolder.getAccountNumber()+"," + accountHolder.getFirstName()+"," + accountHolder.getLastName()+
+                "," + accountHolder.getSavingsAccount().getAccountBalance()+"," + accountHolder.getSavingsAccount().getAccountBalance();
+        bufferedWriter.newLine();
+        bufferedWriter.write(stringContent);
+        bufferedWriter.close();
+        newAddedAccountMemberWriter.close();
 
     }
 }
