@@ -11,9 +11,7 @@ public class MainDriver {
     public static void main(String[] args) throws IOException {
         BankDataInfo.readFile("C:\\Users\\raurosales\\Desktop\\Project1\\java-project-1\\src\\BankData.txt");
         Scanner input = new Scanner(System.in);
-
         int mainMenuChoice;
-
         {
             System.out.println("Welcome to RosalesInc. Bank ");
             System.out.println("----------------------------");
@@ -30,10 +28,5 @@ public class MainDriver {
             }else
             System.out.println("Invalid menu option ");
         }
-
-//
-//        System.out.println("Hello World");
-//        UserFunctionality.newAccountCreation();
-
     }
 }

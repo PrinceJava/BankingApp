@@ -41,7 +41,7 @@ public class BankDataInfo {
         FileWriter newAddedAccountMemberWriter = new FileWriter(file, true);
         BufferedWriter bufferedWriter = new BufferedWriter(newAddedAccountMemberWriter);
         String stringContent = accountHolder.getAccountNumber()+"," + accountHolder.getFirstName()+"," + accountHolder.getLastName()+
-                "," + accountHolder.getSavingsAccount().getAccountBalance()+"," + accountHolder.getSavingsAccount().getAccountBalance();
+                "," + accountHolder.getAcctPassword()+ ","+ accountHolder.getSavingsAccount().getAccountBalance()+"," + accountHolder.getSavingsAccount().getAccountBalance();
         bufferedWriter.newLine();
         bufferedWriter.write(stringContent);
         bufferedWriter.close();

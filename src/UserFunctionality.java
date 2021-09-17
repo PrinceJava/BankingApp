@@ -4,15 +4,9 @@ import java.io.IOException;
 import java.util.Scanner;
 import java.util.concurrent.Callable;
 
-
 public class UserFunctionality {
     public static void userOptions(AccountHolder accountHolder) {
-//        Scanner userActOptions = new Scanner(System.in);
         System.out.println("Welcome " + accountHolder.getFirstName());
-//        System.out.println("1. To display Checking account balance ");
-//        System.out.println();
-
-
         System.out.println("Type 1 for Checking ");
         System.out.println("Type 2 for Savings ");
         Scanner userActChoice = new Scanner(System.in);
@@ -57,7 +51,6 @@ public class UserFunctionality {
                 break;
         }
     }
-
     public static void checkingAccountDepositOption(AccountHolder accountHolder) {
         System.out.println("Deposit Chosen");
         System.out.println("Choose Amount");
@@ -122,7 +115,6 @@ public class UserFunctionality {
         assert accountHolder != null;
         if (accountHolder.getAccountNumber() == accountNumber && accountHolder.getAcctPassword().equals(password)) {
             userOptions(accountHolder);
-//            System.out.println("Hello " + accountHolder.getFirstName());
         } else {
             System.out.println(" Incorrect Password ");
         }
